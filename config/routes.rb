@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "articles#index"
 
-  devise_for :users, controllers: { registrations: "users/registrations" }
+  devise_for :users
 
   resources :articles do
     resources :comments
