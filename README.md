@@ -1,24 +1,9 @@
-# README
+# Odin-Blog Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a small blog related to the implementation of The Odin Project in order to consolidate knowledge related to MVC, RESTful controller methods, database migrations.
 
-Things you may want to cover:
+To check the basic functionality of the Odin-Blog website, just use the test account:
+- test@example.com
+- password
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<a href="https://odin-blog-dw.herokuapp.com/">Odin-Blog</a>
