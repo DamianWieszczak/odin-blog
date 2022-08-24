@@ -1,15 +1,26 @@
 <h1>Articles</h1>
 
-Our blog has <%= Article.public_count %> articles and counting!
+<h4>Our blog has <%= Article.public_count %> articles and counting!</h4>
 
-<ul>
-  <% @articles.each do |article| %>
-    <% unless article.archived? %>
-      <li>
-        <%= link_to article.title, article %>
-      </li>
+
+  <div class="card-deck mt-4 mb-4">
+    <% @articles.each do |article| %>
+      <% unless article.archived? %>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><b><%= article.title %></b></h5>
+            <p class="card-text"><%= truncate(article.body, length: 20) %></p>
+            <div class="btn-group">
+              <%= link_to "Show", article, class: "badge badge-primary mr-1" %>
+              <%= link_to "Edit", edit_article_path(article), class: "badge badge-warning" %>
+            </div>
+            <p class="card-text"><small><%= article.comments.count %> comments</small></p>
+            <p class="card-text"><small class="text-muted">Created <%= time_ago_in_words(article.created_at) %> ago</small></p>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </div>
 
-<%= link_to "New Article", new_article_path %>
+<%= link_to "New Article", new_article_path, class: "btn btn-outline-warning" %>
+
